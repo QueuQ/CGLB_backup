@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="resources/pipeline.jpg">
+    <img src="figures/logo.jpg">
 </div>
 
 # CGLB
