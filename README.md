@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="figures/logo.jpg">
+    <img src="figures/logo.png">
 </div>
 
 # CGLB
