@@ -1,3 +1,5 @@
+![GRB](https://github.com/QueuQ/CGLB/figures/logo.png)
+
 <div align="center">
     <img src="figures/logo.png">
 </div>
