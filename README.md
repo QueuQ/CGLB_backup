@@ -1,6 +1,4 @@
-![GRB](https://github.com/THUDM/grb/blob/master/docs/source/_static/grb_logo.png)
-
-![CGLB](https://github.com/QueuQ/CGLB/figures/logo.png)
+![CGLB](https://github.com/QueuQ/CGLB/tree/main/figures/logo.png)
 
 <div align="center">
     <img src="figures/logo.png">
