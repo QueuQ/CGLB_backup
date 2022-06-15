@@ -1,6 +1,6 @@
 ![CGLB](https://github.com/QueuQ/CGLB/blob/main/figures/logo2.png)
 
-[![License](https://)](./LICENSE)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)]
 
  <tr><td colspan="4"> <a href="#Get Started"> Get Started </a></td></tr> | <tr><td colspan="4"> <a href="#Dataset Usages"> Dataset Usages </a></td></tr> | <tr><td colspan="4"> <a href="#Pipeline Usages"> Pipeline Usages </a></td></tr> | <tr><td colspan="4"> <a href="#Evaluation & Visualization"> Evaluation & Visualization </a></td></tr> | <tr><td colspan="4"> <a href="#Benchmarks"> Benchmarks </a></td></tr>
 
