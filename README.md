@@ -53,6 +53,8 @@
  
  ### Data Structures and Formats
  
+ An instance of the ```NodeLevelDataset``` 
+ 
  
  
  ## Pipeline Usages
