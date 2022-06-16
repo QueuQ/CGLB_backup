@@ -63,6 +63,8 @@
  
  ### Pipeline Overview
  
+ We provide pipelines for training and evaluating models with both N-CGL and G-CGL tasks under both task-IL and class-IL scenarios. 
+ 
  ### Customizing the Pipeline
  
  
