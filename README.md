@@ -38,6 +38,19 @@
  'Products-CL'
  ```
  
+ For importing the G-CGL datasets, use the following command in python:
+ ```
+ from CGLB.GCGL.utils import GraphLevelDataset
+ dataset = GraphLevelDataset('data_name')
+ ```
+ 
+ where the 'data_name' selections are:
+ ```
+ 'SIDER-tIL'
+ 'Tox21-tIL'
+ 'Aromaticity-CL'
+ ```
+ 
  ### Data Structures and Formats
  
  
