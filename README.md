@@ -63,8 +63,15 @@
  
  ### Pipeline Overview
  
- We provide pipelines for training and evaluating models with both N-CGL and G-CGL tasks under both task-IL and class-IL scenarios. In the following, we provide an example for each pipeline to demonstrate the usage.
- #### N-CGL, task-IL, 
+ We provide pipelines for training and evaluating models with both N-CGL and G-CGL tasks under both task-IL and class-IL scenarios. In the following, we provide several examples to demonstrate the usage of the pipelines.
+ #### N-CGL, task-IL
+ Below is the example to run the 'Bare model' baseline with GCN backbone on the Arxiv-CL dataset under the task-IL scenario. 
+ 
+ For both N-CGL and G-CGL experiments, the starting point is the ```train.py``` file, and the different configurations are assigned through the keyword arguments of the Argparse module. For example, to run the N-CGL experiments without inter-task edge under the task-IL scenario, the following code is to be used.
+ 
+ ```
+ 
+ ```
  
  ### Customizing the Pipeline
  
