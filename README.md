@@ -61,30 +61,63 @@
  
  ## Pipeline Usages
  
- ### Pipeline Overview
+
  
  We provide pipelines for training and evaluating models with both N-CGL and G-CGL tasks under both task-IL and class-IL scenarios. In the following, we provide several examples to demonstrate the usage of the pipelines.
- #### N-CGL, task-IL
+ ### N-CGL
  Below is the example to run the 'Bare model' baseline with GCN backbone on the Arxiv-CL dataset under the task-IL scenario. 
  
  For both N-CGL and G-CGL experiments, the starting point is the ```train.py``` file, and the different configurations are assigned through the keyword arguments of the Argparse module. For example, to run the N-CGL experiments without inter-task edge under the task-IL scenario, the following code is to be used.
  
  ```
- 
+ python train.py --dataset $Arxiv-CL \
+        --method $Bare \
+        --basemodel $GCN \
+        --gpu 0 \
+        --clsIL False
+ ```
+ By specifying the ```--clsIL``` to be ```False```, the experiments are configured under the task-IL scenario. 
+ ### G-CGL
+ Below is an example for running the 'Bare model' baseline with GCN backbone on the SIDER-tIL dataset under the task-IL scenario. 
+ ```
+ python train.py --dataset $SIDER-tIL \
+        --method $Bare \
+        --basemodel $GCN \
+        --gpu 0 \
+        --clsIL False
  ```
  
- ### Customizing the Pipeline
  
+ ## Evaluation & Visualization Toolkit
+ We provide three protocols to evaluate the obtained results as follows. With out pipeline, the results are uniformly stored in the form of performance matrix, which can be directly fed into our evaluation toolkit.
  
+ ### 1. Visualization of the Performance Matrix
  
- ## Evaluation & Visualization
+ This is the most thorough evaluation of a continual learning model since it shows the performance change of each task along the learning process on the entire task sequence. Suppose an experiment result is stored via the path ```result_path```, the generation of the visualization could be obtained by the following code.
+ ```
+ from CGLB.NCGL.visualize import show_performance_matrices
+ show_performance_matrices('result_path')
+ ```
  
- ### Evaluation Metric Usages
+ ### 2. Learning Curve
  
- ### Visualization Tools
+ This shows the curve of the average performance (AP) and the average forgetting (AF). It contains less information than the performance matrix but can demonstrate the learning dynamics in a more direct and compact way. Suppose an experiment result is stored via the path ```result_path```, the learning curve could be obtained by the following code.
+ ```
+ from CGLB.NCGL.visualize import show_learning_curve
+ show_learning_curve('result_path')
+ ```
+ 
+ ### 3. Final AP and Final AF
+ Final AP and AF refers to the AP and AF after learning the entire task sequence and is the most compact way to show the performance of a model. Suppose an experiment result is stored via the path ```result_path```, the final AP and AF could be obtained by the following code.
+ ```
+ from CGLB.NCGL.visualize import shown_final_APAF
+ shown_final_APAF('result_path')
+ ```
+ The outputs with standard deviation are in LaTex form for making it easy to be copied and pasted into a LaTex table.
+ 
  
  ## Benchmarks
- 
+ This section shows our currently obtained results from different baselines. This section will keeps being updated to show state-of-the-art results.
  ### N-CGL under Task-IL
  
  ### N-CGL under Class-IL
@@ -94,4 +127,5 @@
  ### G-CGL under Class-IL
  
  ## Acknowledgement
- The construction of CGLB also benefits from existing repositories on both continual learning and continual graph learning. Specifically, the construction of the pipeline for training the continual learning models learns from both [GEM](https://github.com/facebookresearch/GradientEpisodicMemory) and [TWP](https://github.com/hhliu79/TWP). The implementations of the implementations of EWC, GEM learn from [GEM](https://github.com/facebookresearch/GradientEpisodicMemory). The implementations of MAS, Lwf, TWP learn from [MAS](https://github.com/rahafaljundi/MAS-Memory-Aware-Synapses) and [TWP](https://github.com/hhliu79/TWP). The implementation of TWP is adapted from [TWP](https://github.com/hhliu79/TWP). We sincerely than the authors of these repositories for sharing their code.
+ The construction of CGLB also benefits from existing repositories on both continual learning and continual graph learning. Specifically, the construction of the pipeline for training the continual learning models learns from both [GEM](https://github.com/facebookresearch/GradientEpisodicMemory) and [TWP](https://github.com/hhliu79/TWP). The implementations of the implementations of EWC, GEM learn from [GEM](https://github.com/facebookresearch/GradientEpisodicMemory). The implementations of MAS, Lwf, TWP learn from [MAS](https://github.com/rahafaljundi/MAS-Memory-Aware-Synapses) and [TWP](https://github.com/hhliu79/TWP). The implementation of TWP is adapted from [TWP](https://github.com/hhliu79/TWP). The construction of the datasets also benefits from several existing databases and libraries. The construction of the N-CGL datasets uses the datasets and tools from OGB and DGL. The construction of the G-CGL datasets uses the datasets and tools from [DGL](https://docs.dgl.ai/) and [DGL-Lifesci](https://lifesci.dgl.ai/api/data.html).
+We sincerely thank the authors of these works for sharing their code and helping developing the community.
