@@ -53,7 +53,9 @@
  
  ### Data Structures and Formats
  
- An instance of the ```NodeLevelDataset``` 
+ An instance of the ```NodeLevelDataset``` has multiple attributes and methods. ```dataset.d_data```, ```dataset.n_cls```, and ```dataset.n_nodes``` denotes the number of dimensions of the node features, number of classes of the corresponding dataset, and the number of nodes in the corresponding dataset, respectively. ```dataset.graph``` is the entire graph of the corresponding dataset without being divided. The data type of ```dataset.graph``` is the [DGL graph](https://docs.dgl.ai/tutorials/blitz/index.html). ```dataset.labels``` contains the label of every node of ```dataset.graph```. ```dataset.tr_va_te_split``` is a dictionary containing the splitting of each class for training, validation, and test.
+ 
+ ```dataset.get_graph()``` is a most useful method which returns a subgraph of ```dataset.graph``` (for constructing the continual learning task sequence) with the given classes or node indices to retain. There are three keyword arguments for ```dataset.get_graph()``` including ```classes_to_retain```, ```node_ids```, and ```remove_edges```. ```classes_to_retain``` is used to specify which classes of the ```dataset.graph``` to retain in the returned subgraph. ```node_ids``` is used to specify specific nodes to retain. If both ```classes_to_retain``` and ```node_ids``` are specified, their corresponding subgraphs will be separately generated and then combined into one graph. ```remove_edges``` is specifically for removing the edges of the subgraph generated from the specified ```node_ids```. One possible usage of this argument is to select and output the nodes to store for the memory based baseline ER-GNN.
  
  
  
