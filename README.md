@@ -57,7 +57,7 @@
  
  ```dataset.get_graph()``` is a most useful method which returns a subgraph of ```dataset.graph``` (for constructing the continual learning task sequence) with the given classes or node indices to retain. There are three keyword arguments for ```dataset.get_graph()``` including ```classes_to_retain```, ```node_ids```, and ```remove_edges```. ```classes_to_retain``` is used to specify which classes of the ```dataset.graph``` to retain in the returned subgraph. ```node_ids``` is used to specify specific nodes to retain. If both ```classes_to_retain``` and ```node_ids``` are specified, their corresponding subgraphs will be separately generated and then combined into one graph. ```remove_edges``` is specifically for removing the edges of the subgraph generated from the specified ```node_ids```. One possible usage of this argument is to select and output the nodes to store for the memory based baseline ER-GNN.
  
- 
+ The usage of the G-CGL dataset resembles the classic continual learning. An instance of ```GraphLevelDataset``` consists of four components. ```dataset.dataset``` is the original dataset before being divided. ```train_set, val_set, test_set``` are the splittings for training, validation, and test. For the task-IL datasets ```SIDER-tIL``` and ```Tox21-tIL```, the original datasets are multi-label ones, and the splitting is simply splitting the dataset into three parts according the given ratios. While for the ```Aromaticity-CL``` whose original dataset is a multi-class one, the splitting is also done for each class like the N-CGL datasets. As a result, for ```Aromaticity-CL```, each of ```train_set```, ```val_set```, and ```test_set``` is a list containing the splitting of each class. 
  
  ## Pipeline Usages
  
