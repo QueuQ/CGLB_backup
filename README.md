@@ -23,11 +23,14 @@
  
  ### Importing the Datasets
  For importing the N-CGL datasets, use the following command in python:
+ 
  '''
  from CGLB.NCGL.utils import NodeLevelDataset
  dataset = NodeLevelDataset('data_name')
  '''
+ 
  where the 'data_name' should be replaced by the name of the selected dataset, which are:
+ 
  '''
  'CoraFull-CL'
  'Arxiv-CL'
