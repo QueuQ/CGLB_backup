@@ -51,6 +51,7 @@
  'Aromaticity-CL'
  ```
  
+ 
  ### Data Structures and Formats
  
  An instance of the ```NodeLevelDataset``` has multiple attributes and methods. ```dataset.d_data```, ```dataset.n_cls```, and ```dataset.n_nodes``` denotes the number of dimensions of the node features, number of classes of the corresponding dataset, and the number of nodes in the corresponding dataset, respectively. ```dataset.graph``` is the entire graph of the corresponding dataset without being divided. The data type of ```dataset.graph``` is the [DGL graph](https://docs.dgl.ai/tutorials/blitz/index.html). ```dataset.labels``` contains the label of every node of ```dataset.graph```. ```dataset.tr_va_te_split``` is a dictionary containing the splitting of each class for training, validation, and test.
