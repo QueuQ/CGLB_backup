@@ -180,6 +180,7 @@ def pipeline_task_IL_inter_edge(args):
         except:
             subgraph, ids_per_cls_all, [train_ids, valid_ids, test_ids] = dataset.get_graph(
                 tasks_to_retain=cls_retain)
+            mkdir_if_missing('./data/inter_tsk_edge')
             with open('./data/inter_tsk_edge/{}_{}.pkl'.format(args.dataset,task_cls),'wb') as f:
                 pickle.dump([subgraph, ids_per_cls_all, [train_ids, valid_ids, test_ids]], f)
 
