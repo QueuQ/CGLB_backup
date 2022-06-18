@@ -62,8 +62,6 @@
  
  ## Pipeline Usages
  
-
- 
  We provide pipelines for training and evaluating models with both N-CGL and G-CGL tasks under both task-IL and class-IL scenarios. In the following, we provide several examples to demonstrate the usage of the pipelines.
  ### N-CGL
  Below is the example to run the 'Bare model' baseline with GCN backbone on the Arxiv-CL dataset under the task-IL scenario. 
@@ -94,10 +92,10 @@
  
  ### 1. Visualization of the Performance Matrix
  
- This is the most thorough evaluation of a continual learning model since it shows the performance change of each task along the learning process on the entire task sequence. Suppose an experiment result is stored via the path ```result_path```, the generation of the visualization could be obtained by the following code.
+ This is the most thorough evaluation of a continual learning model since it shows the performance change of each task along the learning process on the entire task sequence. Suppose an experiment result is stored via the path ``` "result_path" ```, the generation of the visualization could be obtained by the following code. Note that the path should be quoted in ``` " " ``` instead of ``` ' ' ```, since ``` ' ' ``` may exist in the file name of the experimental result.
  ```
  from CGLB.NCGL.visualize import show_performance_matrices
- show_performance_matrices('result_path')
+ show_performance_matrices("result_path")
  ```
  
  ### 2. Learning Curve
@@ -105,14 +103,14 @@
  This shows the curve of the average performance (AP) and the average forgetting (AF). It contains less information than the performance matrix but can demonstrate the learning dynamics in a more direct and compact way. Suppose an experiment result is stored via the path ```result_path```, the learning curve could be obtained by the following code.
  ```
  from CGLB.NCGL.visualize import show_learning_curve
- show_learning_curve('result_path')
+ show_learning_curve("result_path")
  ```
  
  ### 3. Final AP and Final AF
  Final AP and AF refers to the AP and AF after learning the entire task sequence and is the most compact way to show the performance of a model. Suppose an experiment result is stored via the path ```result_path```, the final AP and AF could be obtained by the following code.
  ```
  from CGLB.NCGL.visualize import shown_final_APAF
- shown_final_APAF('result_path')
+ shown_final_APAF("result_path")
  ```
  The outputs with standard deviation are in LaTex form for making it easy to be copied and pasted into a LaTex table.
  
