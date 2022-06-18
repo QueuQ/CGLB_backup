@@ -100,7 +100,7 @@
  
  ### 2. Learning Curve
  
- This shows the curve of the average performance (AP) and the average forgetting (AF). It contains less information than the performance matrix but can demonstrate the learning dynamics in a more direct and compact way. Suppose an experiment result is stored via the path ```result_path```, the learning curve could be obtained by the following code.
+ This shows the curve of the average performance (AP). It contains less information than the performance matrix but can demonstrate the learning dynamics in a more direct and compact way. Suppose an experiment result is stored via the path ```result_path```, the learning curve could be obtained by the following code.
  ```
  from CGLB.NCGL.visualize import show_learning_curve
  show_learning_curve("result_path")
